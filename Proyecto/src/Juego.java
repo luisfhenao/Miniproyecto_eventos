@@ -1,16 +1,12 @@
+import javax.swing.*;
 import java.util.*;
 
 public class Juego {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // Pedir nombre del héroe con ventana
+        String nuevoNombre = JOptionPane.showInputDialog(null, "Escribe el nombre de tu héroe:");
 
-        // Creamos héroe principal con nombre por defecto
-        Heroe heroePrincipal = new Heroe("Héroe", 100, 30, 20, 10, 15);
-
-        // Preguntamos si quiere renombrar
-        System.out.print("Escribe el nombre de tu héroe: ");
-        String nuevoNombre = sc.nextLine();
-        heroePrincipal.setNombre(nuevoNombre);
+        Heroe heroePrincipal = new Heroe(nuevoNombre, 100, 30, 20, 10, 15);
 
         List<Heroe> heroes = Arrays.asList(
             heroePrincipal,
