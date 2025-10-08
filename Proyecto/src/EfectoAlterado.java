@@ -1,4 +1,3 @@
-package src;
 
 public class EfectoAlterado {
     private String nombre;
@@ -28,11 +27,11 @@ public class EfectoAlterado {
                 break;
             case "bendicion":
                 if (turnosRestantes == duracion) {
-                    ataqueOriginal = objetivo.getAtaqueBase();
-                    objetivo.setAtaqueBase(objetivo.getAtaqueBase() + valor);
+                    ataqueOriginal = objetivo.getAtaque();
+                    objetivo.setAtaque(objetivo.getAtaque() + valor);
                     System.out.println(objetivo.getNombre() + " recibe una bendición. Ataque +"+valor+" durante "+duracion+" turnos.");
                 } else if (turnosRestantes == 1) {
-                    objetivo.setAtaqueBase(ataqueOriginal);
+                    objetivo.setAtaque(ataqueOriginal);
                     System.out.println("La bendición en " + objetivo.getNombre() + " se desvanece.");
                 }
                 break;
