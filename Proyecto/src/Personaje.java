@@ -65,9 +65,9 @@ public abstract class Personaje {
         int finalDanio = Math.max(0, danio - defensa);
         setHp(this.HP - finalDanio);
         if(!vivo){
-            System.out.println(nombre + "ha muerto");
+            System.out.println(nombre + " ha muerto");
         }else{
-            System.out.println(nombre + "recibe" + finalDanio + "de daño. HP restante: " + HP);
+            System.out.println(nombre + " recibe " + finalDanio + " de daño. HP restante: " + HP);
         }
     }
     public abstract void realizarTurno(Batalla batalla);
