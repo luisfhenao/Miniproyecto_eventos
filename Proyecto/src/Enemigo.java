@@ -9,7 +9,7 @@ public class Enemigo extends Personaje {
         if(!vivo) return;
 
        
-        Personaje heroe = batalla.seleccionarObjetivoEnemigo();
+        Personaje heroe = batalla.seleccionarObjetivoHeroe();
         if(heroe != null){
             System.out.println(nombre + " ataca a " + heroe.getNombre());
             heroe.recibirDanio(ataque);
