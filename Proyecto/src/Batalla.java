@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.swing.JOptionPane;
+
 public class Batalla {
     private List<Heroe> heroes;
     private List<Enemigo> enemigos;
@@ -10,7 +12,8 @@ public class Batalla {
     }
 
     public void iniciar() {
-        System.out.println("¡La batalla ha comenzado!");
+        JOptionPane.showMessageDialog(null, "¡La batalla ha comenzado!");
+
 
         while (hayVivos(heroes) && hayVivos(enemigos)) {
             // Crear lista de todos los personajes que actúan este turno
