@@ -2,15 +2,21 @@ public abstract class Personaje {
     protected String nombre;
     protected int HP;
     protected int MP;
+    protected int MaxMP;
+    protected int MaxHP;
     protected int ataque;
     protected int defensa;
     protected int velocidad;
     protected boolean vivo = true;
+    protected boolean puedeActuar = true;       
+    protected EfectoAlterado efectoActivo = null; 
 
-    public Personaje(String nombre, int HP, int MP, int ataque, int defensa, int velociadad ){
+    public Personaje(String nombre, int HP, int MP, int ataque, int defensa, int velociadad){
         this.nombre = nombre;
         this.HP = HP;
         this.MP = MP;
+        this.MaxHP = HP;
+        this.MaxMP = MP;
         this.ataque = ataque;
         this.defensa = defensa;
         this.velocidad = velociadad;
@@ -40,6 +46,12 @@ public abstract class Personaje {
 
     public int getVelocidad() {
         return velocidad;
+    }
+    public int getMaxHP(){
+        return MaxHP;
+    }
+    public int getMaxMP(){
+        return MaxMP;
     }
 
     public boolean estaVivo() {
@@ -71,4 +83,19 @@ public abstract class Personaje {
         }
     }
     public abstract void realizarTurno(Batalla batalla);
+    public boolean puedeActuar() {
+    return puedeActuar;
+}
+
+    public void setPuedeActuar(boolean puedeActuar) {
+        this.puedeActuar = puedeActuar;
+    }
+
+    public EfectoAlterado getEfectoActivo() {
+        return efectoActivo;
+    }
+
+    public void setEfectoActivo(EfectoAlterado efectoActivo) {
+        this.efectoActivo = efectoActivo;
+    }
 }
