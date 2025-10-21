@@ -38,6 +38,17 @@ public class EfectoAlterado {
             case "paralisis":
                 System.out.println(objetivo.getNombre() + " está paralizado y no puede atacar este turno.");
                 break;
+             case "sueño":
+           
+            if (Math.random() < 0.5) {
+                System.out.println(objetivo.getNombre() + " sigue dormido y pierde el turno.");
+                objetivo.setPuedeActuar(false);
+            } else {
+                System.out.println(objetivo.getNombre() + " se ha despertado del sueño.");
+                turnosRestantes = 0; 
+                objetivo.setPuedeActuar(true);
+            }
+            break;
         }
         reducirDuracion();
     }
